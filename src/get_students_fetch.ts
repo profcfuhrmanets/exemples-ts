@@ -54,10 +54,8 @@ let apiClient = new ServiceGroupeCours();
 apiClient.getGroupeCours(teacherId)
     .then((groupeCoursTableau) => {
         console.log("Cours pour " + teacherId);
-        return groupeCoursTableau.map(function (gc) {
-            return console.log('Cours: "' + gc.sigle + ': ' + gc.titre + '" g' + gc.groupe);
-        });
+        return groupeCoursTableau.map((gc) => console.log('Cours: "' + gc.sigle + ': ' + gc.titre + '" g' + gc.groupe));
     })
-    .catch((err:any) => {
+    .catch((err: any) => {
         console.log("As-tu oublié de lancer SGB?")
     });
