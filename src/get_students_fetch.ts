@@ -43,7 +43,7 @@ class ServiceGroupeCours {
         return fetch(urlServeurSGB + endPointGroupeCoursEnseignant, { headers: { token: md5(teacherId) } })
             .then((res) => res.json())
             .then((res) => res.data.map((groupeCoursSGB: any) => formatGroupeCours(groupeCoursSGB)))
-            .catch(function (err: any) {
+            .catch((err: any) => {
                 return console.log(err);;
             });
     }
@@ -57,4 +57,7 @@ apiClient.getGroupeCours(teacherId)
         return groupeCoursTableau.map(function (gc) {
             return console.log('Cours: "' + gc.sigle + ': ' + gc.titre + '" g' + gc.groupe);
         });
+    })
+    .catch((err:any) => {
+        console.log("As-tu oublié de lancer SGB?")
     });
