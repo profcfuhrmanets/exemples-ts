@@ -1,4 +1,4 @@
-let maMap = new Map();
+let maMap = new Map<number, string>();
 maMap.set(77,'Poisson');
 maMap.set(22,'Citron');
 console.log(maMap); // Map { 77 => 'Poisson', 22 => 'Citron' }
