@@ -44,7 +44,7 @@ class ServiceGroupeCours {
             .then((res) => res.json())
             .then((res) => res.data.map((groupeCoursSGB: any) => formatGroupeCours(groupeCoursSGB)))
             .catch((err: any) => {
-                return console.log(err);;
+                return console.log("Erreur avec SGB");
             });
     }
 }
