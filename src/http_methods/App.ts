@@ -27,7 +27,7 @@ class App {
 
         router.get("/", (req, res, next) => {
             res.status(200).send({
-                "message": "Les routes commencent par /api/v1/ et sont définies dans EntrepriseRouter.ts"
+                "message": "Les routes commencent par /api/v1/ et sont définies dans EntrepriseRouter"
             });
         })
 
