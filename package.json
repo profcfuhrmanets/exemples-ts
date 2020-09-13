@@ -17,7 +17,7 @@
     "express": "^4.17.1",
     "md5": "^2.2.1",
     "morgan": "^1.10.0",
-    "node-fetch": "^2.6.0",
+    "node-fetch": "^2.6.1",
     "ts-node": "^8.10.2",
     "typescript": "^3.9.3"
   }
