@@ -27,26 +27,28 @@ class GroupeCours {
 }
 
 function formatGroupeCours(groupeCoursRéponseSGB: any): GroupeCours {
-    return {
-        id: groupeCoursRéponseSGB.id,
-        sigle: groupeCoursRéponseSGB.sigle,
-        maxNbÉtudiants: groupeCoursRéponseSGB.nb_max_student,
-        groupe: groupeCoursRéponseSGB.groupe,
-        titre: groupeCoursRéponseSGB.titre,
-        dateDébut: groupeCoursRéponseSGB.date_debut,
-        dateFin: groupeCoursRéponseSGB.date_fin
-    };
+    return new GroupeCours(
+        groupeCoursRéponseSGB._sigle,
+        groupeCoursRéponseSGB._titre,
+        groupeCoursRéponseSGB._nb_max_student,
+        groupeCoursRéponseSGB._groupe,
+        groupeCoursRéponseSGB._date_debut,
+        groupeCoursRéponseSGB._date_fin,
+        groupeCoursRéponseSGB._id
+    );
 }
 
 class ServiceGroupeCours {
-    getGroupeCours(teacherId: string): Promise<GroupeCours[]> {
-        return fetch(urlServeurSGB + endPointGroupeCoursEnseignant, { headers: { token: md5(teacherId) } })
-            .then((res) => res.json())
-            .then((res) => res.data.map((groupeCoursSGB: any) => formatGroupeCours(groupeCoursSGB)))
-            .catch((err: any) => {
-                return console.log("Erreur avec SGB");
-            });
-    }
+     getGroupeCours = async teacherId => {
+        const response =  await fetch(urlServeurSGB + endPointGroupeCoursEnseignant, { headers: { token: md5(teacherId) } })
+        const json = await response.json();
+        var data = JSON.parse(json.data);
+
+        let groupeCours: GroupeCours[] =   data.map((groupeCoursSGB: any) => formatGroupeCours(groupeCoursSGB));
+    
+        return groupeCours;
+     }
+  
 }
 
 let apiClient = new ServiceGroupeCours();
@@ -57,5 +59,5 @@ apiClient.getGroupeCours(teacherId)
         return groupeCoursTableau.map((gc) => console.log('Cours: "' + gc.sigle + ': ' + gc.titre + '" g' + gc.groupe));
     })
     .catch((err: any) => {
-        console.log("As-tu oublié de lancer SGB?")
+        console.log("As-tu oublié de lancer SGB?", err)
     });
