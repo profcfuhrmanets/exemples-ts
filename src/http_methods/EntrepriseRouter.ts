@@ -43,17 +43,18 @@ class EntrepriseRouter {
         // Dans POST, il n'est pas garanti que les paramètres vont exister.
         // Il faut faire la vérification et la conversion, si nécessaire
         try {
-            var nom = req.body.nom;
-            var poste = req.body.poste;
-            var tauxHoraire = req.body.tauxHoraire;
+            var nom = req.query.nom as string;
+            var poste = req.query.poste as string;
+            var tauxHoraire = req.query.tauxHoraire as string;
+            
 
             if (nom === undefined || poste === undefined || tauxHoraire === undefined) {
                 throw new Error("Au moins un paramètre est manquant");
             }
 
-            tauxHoraire = parseFloat(tauxHoraire);
+           let tauxHoraireNumber = parseFloat(tauxHoraire);
 
-            var employe = this.entreprise.ajouterEmploye(nom, poste, tauxHoraire);
+            var employe = this.entreprise.ajouterEmploye(nom, poste, tauxHoraireNumber);
 
             res.status(200).send({"employe": employe});
         }
@@ -69,18 +70,19 @@ class EntrepriseRouter {
         // PUT : Remplacer entièrement la ressource (tous les paramètres doivent être présents)
         // Ici, la méthode supporte les deux méthodes à la fois (dans votre projet, vous n'avez qu'à en supporter une)
         try {
-            var nom = req.body.nom;
-            var poste = req.body.poste;
-            var tauxHoraire = req.body.tauxHoraire;
+            var nom = req.query.nom as string;
+            var poste = req.query.poste as string;
+            var tauxHoraire = req.query.tauxHoraire;
+            var tauxHoraireNumber;
 
             if (nom === undefined) {
                 throw new Error("Le paramètre nom est manquant");
             }
 
             if (tauxHoraire !== undefined) {
-                tauxHoraire = parseFloat(tauxHoraire);
+                tauxHoraireNumber = parseFloat(tauxHoraire as string);
             }
-            var employe = this.entreprise.modifierEmploye(nom, poste, tauxHoraire);
+            var employe = this.entreprise.modifierEmploye(nom, poste, tauxHoraireNumber);
 
             res.status(200).send({"employe": employe});
         }
@@ -93,7 +95,7 @@ class EntrepriseRouter {
         // Dans DELETE, il n'est pas garanti que les paramètres vont exister.
         // Il faut faire la vérification et la conversion, si nécessaire
         try {
-            var nom = req.body.nom;
+            var nom = req.query.nom as string;
 
             if (nom === undefined) {
                 throw new Error("Le paramètre nom est manquant");
