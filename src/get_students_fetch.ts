@@ -1,7 +1,7 @@
 import md5 = require('md5');
 import fetch = require('node-fetch');
 
-const teacherId: string = 'teacher+3@gmail.com';
+const teacherId: string = 'student+3@gmail.com';
 const urlServeurSGB: string = 'http://localhost:3001';
 const endPointGroupeCoursEnseignant: string = '/api/v1/courses';
 
