@@ -1,7 +1,7 @@
 import md5 = require('md5');
 import fetch = require('node-fetch');
 
-const teacherId: string = 'student+3@gmail.com';
+const teacherId: string = 'teacher+3@gmail.com';
 const urlServeurSGB: string = 'http://localhost:3001';
 const endPointGroupeCoursEnseignant: string = '/api/v1/courses';
 
@@ -42,6 +42,8 @@ class ServiceGroupeCours {
      getGroupeCours = async teacherId => {
         const response =  await fetch(urlServeurSGB + endPointGroupeCoursEnseignant, { headers: { token: md5(teacherId) } })
         const json = await response.json();
+        console.log("Data received from SGB:");
+        console.log(json);
         var data = JSON.parse(json.data);
 
         let groupeCours: GroupeCours[] =   data.map((groupeCoursSGB: any) => formatGroupeCours(groupeCoursSGB));
