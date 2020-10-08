@@ -14,7 +14,12 @@ class GroupeCours {
     dateDébut: string;
     dateFin: string;
 
-    constructor(sigle: string, titre: string, nbMaxÉtudiants: number, groupe: string, dateDébut: string, dateFin: string,
+    constructor(sigle: string, 
+        titre: string, 
+        nbMaxÉtudiants: number, 
+        groupe: string, 
+        dateDébut: string, 
+        dateFin: string,
         id: number) {
         this.id = id;
         this.sigle = sigle;
