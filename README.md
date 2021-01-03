@@ -28,7 +28,7 @@ Pour démarrer le serveur, à partir de la racine : `ts-node src/ui/index.ts`
 
 ## Débogage dans VSCode
 
-- Cliquer le bouton à gauche pour déboguer (ou <key>Ctrl</key>+<key>Shift</key>+<key>D</key>) **>** **JavaScript Debug Terminal**
+- Cliquer le bouton à gauche pour déboguer (ou <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>D</kbd>) **>** **JavaScript Debug Terminal**
 - Activer les points d'arrêt (*breakpoints*) dans le code source au besoin.
 - Dans le terminal du débogueur, lancer le code TypeScript comme avant avec la commande `ts-node`
 
