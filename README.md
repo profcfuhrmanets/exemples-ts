@@ -25,3 +25,11 @@ Pour interagir avec l'application, il est recommandé d'utiliser [Postman](https
 Il s'agit d'une application Express simplifiée qui montre un exemple pour changer de page.
 
 Pour démarrer le serveur, à partir de la racine : `ts-node src/ui/index.ts`
+
+## Débogage dans VSCode
+
+- Cliquer le bouton à gauche pour déboguer (ou <key>Ctrl</key>+<key>Shift</key>+<key>D</key>) **>** **JavaScript Debug Terminal**
+- Activer les points d'arrêt (*breakpoints*) dans le code source au besoin.
+- Dans le terminal du débogueur, lancer le code TypeScript comme avant avec la commande `ts-node`
+
+Voir [comment déboguer (page de VSCode)](https://code.visualstudio.com/docs/editor/debugging).
