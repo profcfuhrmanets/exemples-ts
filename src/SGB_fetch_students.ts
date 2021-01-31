@@ -8,43 +8,43 @@ const endPointGroupeCoursEnseignant: string = '/api/v1/courses';
 class GroupeCours {
     id: number;
     sigle: string;
-    maxNbÉtudiants: number;
+    maxNbEtudiants: number;
     groupe: string;
     titre: string;
-    dateDébut: string;
+    dateDebut: string;
     dateFin: string;
 
     constructor(sigle: string, 
         titre: string, 
-        nbMaxÉtudiants: number, 
+        nbMaxEtudiants: number, 
         groupe: string, 
-        dateDébut: string, 
+        dateDebut: string, 
         dateFin: string,
         id: number) {
         this.id = id;
         this.sigle = sigle;
-        this.maxNbÉtudiants = nbMaxÉtudiants;
+        this.maxNbEtudiants = nbMaxEtudiants;
         this.groupe = groupe;
         this.titre = titre;
-        this.dateDébut = dateDébut;
+        this.dateDebut = dateDebut;
         this.dateFin = dateFin;
     }
 }
 
-function formatGroupeCours(groupeCoursRéponseSGB: any): GroupeCours {
+function formatGroupeCours(groupeCoursReponseSGB: any): GroupeCours {
     return new GroupeCours(
-        groupeCoursRéponseSGB._sigle,
-        groupeCoursRéponseSGB._titre,
-        groupeCoursRéponseSGB._nb_max_student,
-        groupeCoursRéponseSGB._groupe,
-        groupeCoursRéponseSGB._date_debut,
-        groupeCoursRéponseSGB._date_fin,
-        groupeCoursRéponseSGB._id
+        groupeCoursReponseSGB._sigle,
+        groupeCoursReponseSGB._titre,
+        groupeCoursReponseSGB._nb_max_student,
+        groupeCoursReponseSGB._groupe,
+        groupeCoursReponseSGB._date_debut,
+        groupeCoursReponseSGB._date_fin,
+        groupeCoursReponseSGB._id
     );
 }
 
 class ServiceGroupeCours {
-     getGroupeCours = async teacherId => {
+     getGroupeCours = async  teacherId=> {
         const response =  await fetch(urlServeurSGB + endPointGroupeCoursEnseignant, { headers: { token: md5(teacherId) } })
         const json = await response.json();
         console.log("Data received from SGB:");
@@ -66,5 +66,5 @@ apiClient.getGroupeCours(teacherId)
         return groupeCoursTableau.map((gc) => console.log('Cours: "' + gc.sigle + ': ' + gc.titre + '" g' + gc.groupe));
     })
     .catch((err: any) => {
-        console.log("As-tu oublié de lancer SGB?", err)
+        console.log("**************************\nAs-tu oublié de lancer SGB?\n**************************\n\n\n\n", err)
     });

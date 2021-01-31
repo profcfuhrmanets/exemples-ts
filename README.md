@@ -19,3 +19,7 @@ Il s'agit d'une application Express simplifiée qui montre un exemple pour chaqu
 Pour démarrer le serveur, à partir de la racine : `ts-node src/http_methods/index.ts`
 
 Pour interagir avec l'application, il est recommandé d'utiliser [Postman](https://www.postman.com/) Pour vous aider à démarrer, la documentation du logiciel offre un [tutoriel complet](https://learning.postman.com/docs/sending-requests/requests/).
+
+
+# jest Expect
+https://jestjs.io/docs/en/expect

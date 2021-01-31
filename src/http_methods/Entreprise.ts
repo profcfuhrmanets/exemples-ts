@@ -25,6 +25,10 @@ export class Entreprise {
 
     public modifierEmploye(nom:string, poste:string, tauxHoraire:number) {
         var employe = this._employes.get(nom);
+        
+        if(employe == undefined){
+            throw new Error("Employe do not exist");
+        }
 
         if (poste !== undefined) {
             employe.poste = poste;

@@ -9,6 +9,7 @@ const persons = [
     { prénom: "Marc", nom: "Smith" }
 ];
 
+
 // function getNomComplet(élément) {
 //     var nomComplet = [élément.prénom, élément.nom].join(" ");
 //     return nomComplet;

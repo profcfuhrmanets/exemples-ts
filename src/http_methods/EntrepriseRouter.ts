@@ -1,7 +1,7 @@
 import { Router, Request, Response, NextFunction } from 'express';
 import { Entreprise } from './Entreprise';
 
-class EntrepriseRouter {
+export class EntrepriseRouter {
     public router: Router;
     private entreprise:Entreprise
 
@@ -14,14 +14,20 @@ class EntrepriseRouter {
         this.init();
     }
 
+    public getEntreprise(): Entreprise {
+        return this.entreprise;
+    }
+
     public obtenirEmployes(req:Request, res:Response, next:NextFunction) {
         try {
             var employes = this.entreprise.obtenirEmployes();
 
-            res.status(200).send({"employes": employes});
+            res.status(200)
+            res.send({"employes": employes});
         }
         catch (error) {
-            res.status(500).send({"error": error.toString()});
+            res.status(500)
+            res.send({"error": error.toString()});
         }
     }
 
@@ -32,10 +38,12 @@ class EntrepriseRouter {
             var nom = req.params.nom;
             var employe = this.entreprise.obtenirEmploye(nom);
 
-            res.status(200).send({"employe": employe});
+            res.status(200)
+            res.send({"employe": employe});
         }
         catch(error) {
-            res.status(500).send({"error": error.toString()});
+            res.status(500)
+            res.send({"error": error.toString()});
         }
     }
 
@@ -56,10 +64,12 @@ class EntrepriseRouter {
 
             var employe = this.entreprise.ajouterEmploye(nom, poste, tauxHoraireNumber);
 
-            res.status(200).send({"employe": employe});
+            res.status(200)
+            res.send({"employe": employe});
         }
         catch (error) {
-            res.status(500).send({"error": error.toString()});
+            res.status(500)
+            res.send({"error": error.toString()});
         }
     }
 
@@ -84,10 +94,12 @@ class EntrepriseRouter {
             }
             var employe = this.entreprise.modifierEmploye(nom, poste, tauxHoraireNumber);
 
-            res.status(200).send({"employe": employe});
+            res.status(200)
+            res.send({"employe": employe});
         }
         catch (error) {
-            res.status(500).send({"error": error.toString()});
+            res.status(500)
+            res.send({"error": error.toString()});
         }
     }
 
@@ -106,7 +118,8 @@ class EntrepriseRouter {
             res.status(200).send({"message": "Succès"});
         }
         catch(error) {
-            res.status(500).send({"error": error.toString()});
+            res.status(500)
+            res.send({"error": error.toString()});
         }
     }
 
