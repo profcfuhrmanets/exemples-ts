@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1612112007750" clover="3.2.0">
-  <project timestamp="1612112007750" name="All files">
+<coverage generated="1612112274379" clover="3.2.0">
+  <project timestamp="1612112274379" name="All files">
     <metrics statements="88" coveredstatements="53" conditionals="17" coveredconditionals="9" methods="21" coveredmethods="16" elements="126" coveredelements="78" complexity="0" loc="88" ncloc="88" packages="1" files="3" classes="3"/>
     <file name="Employe.ts" path="/Users/rossypro/sources/ets/log210/exemples-ts/src/http_methods/Employe.ts">
       <metrics statements="10" coveredstatements="10" conditionals="0" coveredconditionals="0" methods="7" coveredmethods="7"/>

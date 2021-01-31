@@ -7,6 +7,7 @@
         "test": "jest --coverage",
         "watch": "jest --coverage --watchAll",
         "start": "ts-node src/http_methods/index.ts",
+        "ui": "ts-node src/ui/index.ts",
         "array_map_arrow": "ts-node src/array_map_arrow.ts",
         "arrow_function": "ts-node src/arrow_function.ts",
         "tableau_associatif": "ts-node src/tableau_associatif.ts",
@@ -23,6 +24,7 @@
         "md5": "^2.2.1",
         "morgan": "^1.10.0",
         "node-fetch": "^2.6.1",
+        "pug": "^3.0.0",
         "ts-node": "^8.10.2",
         "typescript": "^3.9.3"
     },
