@@ -4,11 +4,13 @@ Pour installer:
 
     npm install
 
-Note: il est peut-être nécessaire d'installer `ts-node et typescript` avec `npm install -g ts-node typescript`
+Note: 
+- il est peut-être nécessaire d'installer `ts-node et typescript` avec `npm install -g ts-node typescript`
+- Si vous avez une erreur de `npm ERR! Cannot read property 'match' of undefined` pendant l'installation, juste supprimer le fichier `package-lock.json`, puis relancer l'installation.
     
 Pour exécuter en ligne de commande (l'exemple qui t'intéresse):
 
-    ts-node src/get_students_fetch.ts
+    ts-node src/SGB_fetch_students.ts
     
 ## Exemples de méthodes HTTP
 
