@@ -11,23 +11,23 @@ export class Employe {
 
 
     // Lecture seule
-    get nom():string {
+    get nom(): string {
         return this._nom;
     }
 
-    get poste():string {
+    get poste(): string {
         return this._poste;
     }
 
-    set poste(poste:string) {
+    set poste(poste: string) {
         this._poste = poste;
     }
 
-    get tauxHoraire():number {
+    get tauxHoraire(): number {
         return this._tauxHoraire;
     }
 
-    set tauxHoraire(tauxHoraire:number) {
+    set tauxHoraire(tauxHoraire: number) {
         this._tauxHoraire = tauxHoraire;
     }
 

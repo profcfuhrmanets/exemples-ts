@@ -4,11 +4,13 @@ Pour installer:
 
     npm install
 
-Note: il est peut-être nécessaire d'installer `ts-node et typescript` avec `npm install -g ts-node typescript`
+Note: 
+- il est peut-être nécessaire d'installer `ts-node et typescript` avec `npm install -g ts-node typescript`
+- Si vous avez une erreur de `npm ERR! Cannot read property 'match' of undefined` pendant l'installation, juste supprimer le fichier `package-lock.json`, puis relancer l'installation.
     
 Pour exécuter en ligne de commande (l'exemple qui t'intéresse):
 
-    ts-node src/get_students_fetch.ts
+    ts-node src/SGB_fetch_students.ts
     
 ## Exemples de méthodes HTTP
 
@@ -22,8 +24,10 @@ Pour interagir avec l'application, il est recommandé d'utiliser [Postman](https
 
 
 # jest Expect
+
 https://jestjs.io/docs/en/expect
 
+Pour interagir avec l'application, il est recommandé d'utiliser [Postman](https://www.postman.com/). Pour vous aider à démarrer, la documentation du logiciel offre un [tutoriel complet](https://learning.postman.com/docs/sending-requests/requests/).
 ## Exemples d'interface utilisateur
 
 Il s'agit d'une application Express simplifiée qui montre un exemple pour changer de page.
@@ -37,4 +41,3 @@ Pour démarrer le serveur, à partir de la racine : `ts-node src/ui/index.ts`
 - Dans le terminal du débogueur, lancer le code TypeScript comme avant avec la commande `ts-node`
 
 Voir [comment déboguer (page de VSCode)](https://code.visualstudio.com/docs/editor/debugging).
->>>>>>> 88622075086bd55378074a40dda700fdc88b7a6e
