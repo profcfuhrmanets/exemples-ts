@@ -1,15 +1,4 @@
-// // import * as chai from 'chai';
-// // import chaiHttp = require('chai-http');
-// // import { exception } from 'console';
 
-// // import app from '../src/App';
-// // import { Course } from '../src/core/Course';
-// // import * as md5 from 'md5';
-// // import { POINT_CONVERSION_UNCOMPRESSED } from 'constants';
-// // import md5 = require('md5');
-
-// // chai.use(chaiHttp);
-// // const expect = chai.expect;
 // https://medium.com/javascript-in-plain-english/how-to-unit-test-express-middleware-typescript-jest-c6a7ad166e74
 import { NextFunction, Request, Response } from 'express';
 import {Employe} from '../../src/http_methods/Employe';
@@ -31,6 +20,7 @@ describe('EnterpriseRouterTest', () => {
     };    
   })
   
+  // ajouterEmploye?nom=Yvan1&poste=Testeur?tauxHoraire=11
   it('ajouterEmploye', () => {
     mockRequest = {
       query: {
@@ -59,6 +49,21 @@ describe('EnterpriseRouterTest', () => {
   });
 
 
+// employes/Yvan1
+  it('obtenirEmploye', () => {
+   mockRequest = {
+    params: {
+        'nom': 'Yvan1',
+    }
+  }
+  entrepriseRoutes.getEntreprise().ajouterEmploye( "Yvan1","Testeur", 11);
 
+  entrepriseRoutes.obtenirEmploye(mockRequest as Request, mockResponse as Response, nextFunction);
+  
+  expect(mockResponse.status).toHaveBeenCalledWith(200);
+  let employe =  new Employe( "Yvan1","Testeur", 11);
+  expect(mockResponse.send).toBeCalledWith({"employe": employe});
+  
+});
   
 });

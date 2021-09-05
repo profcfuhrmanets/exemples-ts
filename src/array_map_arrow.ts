@@ -19,3 +19,8 @@ const persons = [
 
 console.log(persons.map(élément => [élément.prénom, élément.nom].join(" ")));
 
+
+console.log(persons.map(function(élément){
+        return [élément.prénom, élément.nom].join(" ")
+}));
+

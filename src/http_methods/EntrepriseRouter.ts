@@ -128,11 +128,11 @@ export class EntrepriseRouter {
      */
     init() {
         // Retourner tous les employés
-        this.router.get("/employes", this.obtenirEmployes.bind(this));
+        this.router.get("/employes", this.obtenirEmployes.bind(this)); // /employes
         // Retourner un employé
-        this.router.get("/employes/:nom", this.obtenirEmploye.bind(this));
+        this.router.get("/employes/:nom", this.obtenirEmploye.bind(this));  //param
         // Ajouter un employé
-        this.router.post("/employes", this.ajouterEmploye.bind(this));
+        this.router.post("/employes", this.ajouterEmploye.bind(this));  //   /employes?nom=yvan&poste=Charge%20de%20cours&tauxHoraire=20
         // Modifier un employé
         this.router.put("/employes", this.modifierEmploye.bind(this));
         this.router.patch("/employes", this.modifierEmploye.bind(this));

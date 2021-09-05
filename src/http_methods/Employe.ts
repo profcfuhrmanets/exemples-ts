@@ -2,12 +2,13 @@ export class Employe {
     private _nom:string;
     private _poste:string;
     private _tauxHoraire:number;
-
+   
     constructor(nom:string, poste:string, tauxHoraire:number) {
         this._nom = nom;
         this.poste = poste;
         this.tauxHoraire = tauxHoraire;
     }
+
 
     // Lecture seule
     get nom():string {
@@ -29,6 +30,7 @@ export class Employe {
     set tauxHoraire(tauxHoraire:number) {
         this._tauxHoraire = tauxHoraire;
     }
+
 
     public toJSON() {
         return {

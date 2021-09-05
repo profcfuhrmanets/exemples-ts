@@ -45,7 +45,11 @@ function formatGroupeCours(groupeCoursReponseSGB: any): GroupeCours {
 
 class ServiceGroupeCours {
      getGroupeCours = async  teacherId=> {
-        const response =  await fetch(urlServeurSGB + endPointGroupeCoursEnseignant, { headers: { token: md5(teacherId) } })
+         console.log("getGroupCours called")
+        let url =  urlServeurSGB + endPointGroupeCoursEnseignant;
+        console.log("Fetching: " + url + " using header token as md5 of " + teacherId)
+         const response =  await fetch(url, { headers: { token: md5(teacherId) } })
+         console.log("get response from external server");
         const json = await response.json();
         console.log("Data received from SGB:");
         console.log(json);

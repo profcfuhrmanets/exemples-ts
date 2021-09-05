@@ -40,6 +40,13 @@ describe('EnterpriseTest', () => {
     expect(employe.tauxHoraire).toEqual(7);    
   });
 
+  // it('modifie poste employe by name', () => {
+  //   let employe = enterprise.modifierEmploye("Yvan1",undefined,undefined);
+  //   expect(employe.nom).toEqual("Yvan1");
+  //   expect(employe.poste).toEqual("Chargé de cours1");
+  //   expect(employe.tauxHoraire).toEqual(11);    
+  // });
+
 
   it('modifie employe by name', () => {
     expect(() => { enterprise.modifierEmploye("Yvan5","Developpeur", 7);}).toThrowError("Employe do not exist");
