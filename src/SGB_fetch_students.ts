@@ -59,6 +59,6 @@ apiClient.getGroupeCours(teacherId)
     .catch((err: any) => {
         console.error("Catching error:")
         console.error(err);
-        console.error("\n**************************\nAs-tu oublié de lancer SGB?\n**************************\n");
+        if (err.errno == "ECONNREFUSED") console.error("\n**************************\nAs-tu oublié de lancer SGB?\n**************************\n");
         exit(1);
     });
