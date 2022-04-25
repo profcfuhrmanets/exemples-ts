@@ -1,10 +1,10 @@
 
 const input = [
-    {'name':'Marie', 'job': 'programmer'},
-    {'name':'Fred', 'job': 'tester'},
-    {'name':'Emily', 'job': 'programmer'},
-    {'name':'Jane', 'job': 'manager'},
-    {'name':'Pierre', 'job': 'programmer'},
+    {'name':'Marie', 'job': 'programmer', 'salary': 9000},
+    {'name':'Fred', 'job': 'tester', 'salary': 4000},
+    {'name':'Emily', 'job': 'programmer', 'salary': 9000},
+    {'name':'Jane', 'job': 'manager', 'salary': 12000},
+    {'name':'Pierre', 'job': 'programmer', 'salary': 9000},
 ];
 const names = [];
 
@@ -25,3 +25,6 @@ const otherNames = input
 ;
 
 console.log('otherNames: ' + otherNames);
+
+// reduce pour calculer la somme des salaires
+console.log(`sum of salary: ${input.reduce((somme, personne) => personne.salary + somme, 0)}`)
