@@ -16,9 +16,9 @@
     "author": "Christopher Fuhrman",
     "license": "MIT",
     "dependencies": {
-        "body-parser": "^1.19.0",
+        "body-parser": "^1.20.1",
         "debug": "^4.3.2",
-        "express": "^4.17.1",
+        "express": "^4.18.2",
         "jest-runner": "^27.3.1",
         "md5": "^2.2.1",
         "morgan": "^1.10.0",
