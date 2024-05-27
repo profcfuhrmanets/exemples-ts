@@ -42,3 +42,7 @@ Pour démarrer le serveur, à partir de la racine : `ts-node src/ui/index.ts`
 - Dans le terminal du débogueur, lancer le code TypeScript comme avant avec la commande `ts-node`
 
 Voir [comment déboguer (page de VSCode)](https://code.visualstudio.com/docs/editor/debugging).
+
+## Archivage 2024
+
+Faute de temps pour le maintenir, j'ai décidé d'archiver ce dépôt en mai 2024.
